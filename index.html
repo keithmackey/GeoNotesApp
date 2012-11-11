@@ -1,1 +1,67 @@
-Setting up pages...
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GeoNotes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/lib/modernizr-2.5.3.min.js"></script>    
+  </head>
+  <body>
+
+    <div id="pages">
+
+      <div class="page" id="viewNotes">
+          <div class="install-error"></div>
+          <div class="install-ios-msg">
+            To install, press the forward arrow in Safari and touch "Add to
+            Home Screen"
+          </div>
+          <div id="header"><h1>GeoNote</h1></div>
+          <div id="note-border">
+              <section id="note-list">
+                <ul></ul>
+              </section>
+          </div>
+          <div id="add-note">
+              <a href="#add"><i class="icon-plus-sign"></i>Add Note</a>
+              <a href="#dino"><i class="icon-star"></i>Dinosaur</a>
+			<div id="list-view"><a href="#listview">List View</a></div>
+			<div id="map-view"><a href="#mapview">Map View</a></div>
+          </div>
+      </div>
+
+      <div class="page" id="addNote"></div>
+      <div class="page" id="viewDino"></div>
+
+    </div>
+    <script id="add-note-template" type="text/template">
+      <div class="item">
+        <label for="noteText"><h1>Add Note</h1></label>
+        <textarea name="noteText" id="noteText"></textarea>
+      </div>
+      <div class="item">
+        <span>
+          <span data-name="latitude"></span>,
+          <span data-name="longitude"></span>
+        </div>
+      </div>
+      <div class="item">
+        <input type="button" class="button addNote" value="Add Note" />
+      </div>
+    </script>
+    <script id="note-list-template" type="text/template">
+      <li>
+      <span class="text"><%= text %></span>
+        <span class="meta">
+          <span class="badge distance"><%= distance %></span>
+          <i class="icon-chevron-right"></i>
+        </span>
+      </li>
+    </script>
+
+    <script type="text/javascript" data-main="js/config.js" src="js/lib/require.js"></script>
+
+  </body>
+</html>
